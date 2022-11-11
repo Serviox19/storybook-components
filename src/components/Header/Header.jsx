@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Button } from '../Button/Button.jsx';
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+export const Header = ({ heading, user, onLogin, onLogout, onCreateAccount }) => (
   <header>
     <div className="wrapper">
       <div>
@@ -24,7 +24,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1>{heading ? ( heading.title ) : ( 'Header' )}</h1>
       </div>
       <div>
         {user ? (
