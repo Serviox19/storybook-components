@@ -1,0 +1,36 @@
+.carousel {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+
+  .carousel-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .carousel-top__arrows {
+    position: relative;
+  }
+
+  &.arrowsTop {
+
+    .slick-arrow {
+      position: absolute;
+      left: unset;
+      top: -32px;
+      right: 0;
+    }
+
+    .slick-prev {
+      right: 32px;
+    }
+  }
+
+  .slick-arrow {
+    &::before {
+      color: #000;
+    }
+  }
+}
