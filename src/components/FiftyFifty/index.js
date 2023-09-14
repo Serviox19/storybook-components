@@ -13,8 +13,8 @@ export const FiftyFifty = (
     ...props
   }) => {
 
-  const buttonStyle = props.buttonStyle == 'primary' ? true : false;
-  const imageReverse = imagePosition == 'right' ? 'reverse' : null;
+  const buttonStyle = props.buttonStyle === 'primary' ? true : false;
+  const imageReverse = imagePosition === 'right' ? 'reverse' : null;
 
   return (
     <div className="fifty-fifty">

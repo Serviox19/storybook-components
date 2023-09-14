@@ -15,7 +15,7 @@ export const Carousel = ({ title, pagination, ...props }) => {
     arrows: props.showArrows ? true : false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: props.slidesToShowDesktop ? props.slidesToShowDesktop : 4,
     slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
@@ -36,7 +36,7 @@ export const Carousel = ({ title, pagination, ...props }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: props.slidesToShowMobile ? props.slidesToShowMobile : 1,
         }
       }
     ]

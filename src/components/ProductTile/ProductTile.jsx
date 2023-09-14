@@ -5,7 +5,7 @@ export const ProductTile = ({ ...props }) => {
   return (
     <div className="product-tile">
       <div className="product-tile__media">
-        <img src={img} alt={title} />
+        <img loading="lazy" src={img} alt={title} />
       </div>
       <h3 className="product-tile__title">{title}</h3>
       <p className="product-tile__subtitle">{subtitle}</p>
