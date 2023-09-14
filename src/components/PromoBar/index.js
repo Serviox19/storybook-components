@@ -1,5 +1,4 @@
 import React from 'react';
-import { useRef } from "react";
 import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -10,8 +9,6 @@ import './promo-bar.scss';
 export const PromoBar = ({ ...props }) => {
 
   console.log(props);
-
-
 
   const settings = {
     // Optional parameters
