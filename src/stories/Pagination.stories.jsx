@@ -6,7 +6,8 @@ export default {
   title: 'Simple/Pagination',
   component: 'Pagination',
   argTypes: {
-    paginateBy: { control: 'number' }
+    paginateBy: { control: 'number' },
+    itemsCount: { control: 'number' }
   }
 }
 
@@ -14,5 +15,6 @@ const Template = (args) => <Pagination {...args} />;
 export const Main = Template.bind({});
 
 Main.args = {
-  paginateBy: 8
+  paginateBy: 8,
+  itemsCount: 24
 }
