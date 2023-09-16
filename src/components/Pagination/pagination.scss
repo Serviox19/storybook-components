@@ -1,3 +1,5 @@
+$blue: #1ea7fd;
+
 .section {
   display: block;
   width: 100%;
@@ -37,13 +39,31 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: solid 1px #1ea7fd;
-    border-radius: 2px;
-    background-color: #1ea7fd;
-    color: white;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background-color: white;
+    color: $blue;
     cursor: pointer;
     padding: 4px;
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
+    border: solid 1px $blue;
+    border-left: none;
+    font-size: 14px;
+    font-weight: 400;
+
+    &:nth-child(1) {
+      border-left: solid 1px $blue;
+    }
+
+    &:not(.active):hover {
+      background-color: #EFEFEF;
+    }
+
+    &.active {
+      background-color: $blue;
+      color: white;
+    }
   }
 }

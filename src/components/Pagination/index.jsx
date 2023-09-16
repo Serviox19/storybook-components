@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import './pagination.scss';
 
@@ -8,7 +8,7 @@ export const Pagination = ({ ...props }) => {
   const [page, setPage] = useState(1);
   const paginate = props.paginateBy;
   const pages = Math.ceil((props.itemsCount / props.paginateBy));
-  const pageNumbers = [...Array(pages + 1).keys()].slice(1)
+  const pageNumbers = [...Array(pages + 1).keys()].slice(1);
 
   for (var i = 0; i < props.itemsCount; i++) {
     items.push(
@@ -20,11 +20,7 @@ export const Pagination = ({ ...props }) => {
     )
   }
 
-  let currentPageItems = items.slice((page - 1) * paginate, (page * paginate))
-
-  useEffect(() => {
-    currentPageItems = items.slice((page - 1) * paginate, (page * paginate))
-  }, [page])
+  const currentPageItems = useMemo(() => items.slice((page - 1) * paginate, (page * paginate)), [page, items, paginate]);
 
   const renderItems = () => {
     return currentPageItems.map((item, i) => {
@@ -37,10 +33,13 @@ export const Pagination = ({ ...props }) => {
   }
 
   const renderPagination = () => {
-    return pageNumbers.map((page, i) => {
+    return pageNumbers.map((pageNum, i) => {
       return (
-        <button className="pagination-btn" key={i} onClick={() => setPage(page)}>
-          {page}
+        <button
+          key={i}
+          className={`pagination-btn ${pageNum === page ? 'active' : ''}`}
+          onClick={() => setPage(pageNum)}>
+            {pageNum}
         </button>
       )
     })

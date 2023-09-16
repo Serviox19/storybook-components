@@ -15,6 +15,6 @@ const Template = (args) => <Pagination {...args} />;
 export const Main = Template.bind({});
 
 Main.args = {
-  paginateBy: 8,
+  paginateBy: 6,
   itemsCount: 24
 }
