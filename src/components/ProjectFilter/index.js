@@ -31,9 +31,11 @@ export const ProjectFilter = ({ content, ...props }) => {
   }, [activeFilters])
 
   const renderFilters = () => {
-    return props.filters.map((filter) => {
+    const sorted = props.filters.sort();
+    console.log(sorted);
+    return sorted.map((filter, index) => {
       return (
-        <button className={`filter ${activeFilters.length && activeFilters.includes(filter) ? 'active' : ''}`} onClick={() => handleFilterToggle(filter)}>
+        <button className={`filter ${activeFilters.length && activeFilters.includes(filter) ? 'active' : ''}`} onClick={() => handleFilterToggle(filter)} key={index}>
           { filter }
         </button>
       );
@@ -41,9 +43,9 @@ export const ProjectFilter = ({ content, ...props }) => {
   }
 
   const renderProjects = () => {
-    return matchingProjects.map((project) => {
+    return matchingProjects.map((project, index) => {
       return (
-        <div className="project-filter__item">
+        <div className="project-filter__item" key={index}>
           <div className="media">
             <img src={project.image} alt={project.title} loading="lazy" />
           </div>
