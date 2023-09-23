@@ -1,0 +1,29 @@
+.zoom {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.zoom__swiper {
+  width: 100%;
+  position: relative;
+
+  .swiper-slide {
+    cursor: zoom-in;
+
+    img {
+      width: 400px;
+      height: 600px;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  &.zoom-active .swiper-slide {
+    cursor: zoom-out;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: white;
+  }
+}
